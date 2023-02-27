@@ -2,6 +2,7 @@ package com.noirix.repository;
 
 import com.noirix.domain.User;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
+@Primary
 //bean id=userRepositoryImpl   class=UserRepositoryImpl
 //@Component
 public class UserRepositoryImpl implements UserRepository {

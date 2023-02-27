@@ -1,13 +1,11 @@
 package com.noirix.repository;
 
 import com.noirix.domain.User;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-@Primary
 public class UserSecondRepositoryImpl implements UserRepository {
 
     @Override

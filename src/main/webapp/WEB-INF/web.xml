@@ -13,6 +13,24 @@
         <url-pattern>/FrontController</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>CarsServlet</servlet-name>
+        <servlet-class>com.noirix.controller.CarsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CarsServlet</servlet-name>
+        <url-pattern>/CarsController</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>cars</servlet-name>
+        <jsp-file>/WEB-INF/jsp/cars.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cars</servlet-name>
+        <url-pattern>/cars</url-pattern>
+    </servlet-mapping>
+
     <!--    localhost:8080/application/FrontController-->
     <!--    https://kalevich.com/application/FrontController-->
 

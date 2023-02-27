@@ -1,6 +1,8 @@
 package com.noirix;
 
+import com.noirix.repository.CarsRepository;
 import com.noirix.repository.UserRepository;
+import com.noirix.service.CarService;
 import com.noirix.service.UserService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -16,5 +18,13 @@ public class SpringTest {
 
         System.out.println(userRepository.findAll());
         System.out.println(userService.findAll());
+
+        System.out.println("======Тест контекста для Сars========");
+
+        CarsRepository carsRepository = applicationContext.getBean(CarsRepository.class);
+        CarService carService = applicationContext.getBean(CarService.class);
+        System.out.println(carsRepository.findAll());
+        System.out.println(carService.findAll());
+
     }
 }
