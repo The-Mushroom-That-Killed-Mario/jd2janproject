@@ -3,17 +3,25 @@ package com.noirix.repository;
 import com.noirix.domain.Car;
 import org.springframework.stereotype.Repository;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
+
 @Repository
 public class CarsRepositoryImplAdv implements CarsRepository{
     @Override
-    public Car findOne(Long id) {
+    public Optional<Car> findOne(Car car) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Car findById(Long id) {
         return null;
     }
 
     @Override
     public List<Car> findAll() {
-        return null;
+        return Collections.emptyList();
     }
 
     @Override
@@ -27,8 +35,8 @@ public class CarsRepositoryImplAdv implements CarsRepository{
     }
 
     @Override
-    public void delete(Long id) {
-
+    public Car delete(Long id) {
+        return null;
     }
 
     @Override

@@ -17,13 +17,13 @@ public class UserAggServiceImpl implements UserAggregationService {
     public Map<String, Object> getStats() {
 
         List<User> users = userRepository.findAll();
-        User one = userRepository.findOne(2L);
+//        Optional<User> one = userRepository.findOne(2L);
         userRepository.searchUser();
 
         Map<String, Object> resultMap = new HashMap<>();
 
         resultMap.put("allUsers", users);
-        resultMap.put("oneUser", one);
+//        resultMap.put("oneUser", one);
 
         return resultMap;
     }

@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 @Primary
@@ -24,7 +25,7 @@ public class UserRepositoryImpl implements UserRepository {
     public static final int DATABASE_PORT = 5432;
     public static final String DATABASE_NAME = "/apptest";
     public static final String DATABASE_LOGIN = "postgres";
-    public static final String DATABASE_PASSWORD = "root";
+    public static final String DATABASE_PASSWORD = "123";
 
     private static final String ID = "id";
     private static final String NAME = "name";
@@ -99,7 +100,12 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public User findOne(Long id) {
+    public Optional<User> findOne(User user) {
+        return Optional.empty();
+    }
+
+    @Override
+    public User findById(Long id) {
         return null;
     }
 
@@ -114,8 +120,9 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public void delete(Long id) {
+    public User delete(Long id) {
 
+        return null;
     }
 
     @Override

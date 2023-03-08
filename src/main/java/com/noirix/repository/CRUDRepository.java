@@ -1,6 +1,9 @@
 package com.noirix.repository;
 
+import com.noirix.exception.EntityNotFoundException;
+
 import java.util.List;
+import java.util.Optional;
 
 //K - key, datatype of PK
 //T - type of object
@@ -11,7 +14,11 @@ public interface CRUDRepository <K, T> {
 //    Update
 //    Delete
 
-    T findOne(K id);
+
+
+    Optional<T> findOne(T object);
+
+    T findById(K id) throws EntityNotFoundException;
 
     List<T> findAll();
 
@@ -19,5 +26,5 @@ public interface CRUDRepository <K, T> {
 
     T update(T object);
 
-    void delete(K id);
+    T delete(K id) throws EntityNotFoundException;
 }

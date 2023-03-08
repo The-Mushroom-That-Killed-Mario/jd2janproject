@@ -2,6 +2,7 @@ package com.noirix;
 
 import com.noirix.domain.Car;
 import com.noirix.domain.User;
+import com.noirix.exception.EntityNotFoundException;
 import com.noirix.repository.CarsRepository;
 import com.noirix.repository.CarsRepositoryImpl;
 import com.noirix.repository.UserRepository;
@@ -14,7 +15,7 @@ public class Main {
     //Ctrl+Alt+O - import optimizing
     //Ctrl+Alt+L - formatting
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws EntityNotFoundException {
 
         UserRepository userRepository = new UserRepositoryImpl();
 
@@ -34,23 +35,21 @@ public class Main {
 
 
         System.out.println("Цена до изменения");
-        System.out.println(carsRepository.findOne(4L));
+        System.out.println(carsRepository.findById(1L));
         System.out.println();
-        Car car = carsRepository.findOne(4L);
+        Car car = carsRepository.findById(1L);
         car.setPrice(900000);
         System.out.println("Цена после изменения");
         System.out.println(carsRepository.update(car));
         System.out.println("==========================");
 
 
-//        car.setId(1L);
-//        car.setUserId(4L);
-//        carsRepository.create(car);
-//        System.out.println("CREATE::  ");
+        car.setId(null);
+        car.setUserId(3L);
 
+        System.out.println("DELETE::  " + carsRepository.delete(23L));
 
-//        carsRepository.delete(1L);
-//        System.out.println("DELETE::  ");
+        System.out.println("CREATE::  " + carsRepository.create(car));
 
 
         for (Car car1 : carsRepository.findAll()) {
@@ -66,5 +65,14 @@ public class Main {
         for (Car car1 : carsRepository.searchCarByUserName("Вася")) {
             System.out.println(car1);
         }
+
+        System.out.println("Запускаем поиск машины по id");
+        try {
+            System.out.println(carsRepository.findById(10L));
+        } catch (EntityNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
     }
 }

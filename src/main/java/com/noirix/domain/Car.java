@@ -14,7 +14,7 @@ public class Car {
     private String name;
     private String brand;
     private Long userId;
-    private int price;
+    private Integer price;
     private Timestamp created;
     private Timestamp changed;
     private boolean isDeleted;

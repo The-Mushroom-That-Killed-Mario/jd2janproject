@@ -1,12 +1,13 @@
 package com.noirix.service;
 
 import com.noirix.domain.Car;
-import org.springframework.stereotype.Service;
+import com.noirix.exception.EntityNotFoundException;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface CarService {
-    Car findOne(Long id);
+    Optional<Car> findOne(Car car);
 
     List<Car> findAll();
 
@@ -14,7 +15,7 @@ public interface CarService {
 
     Car update(Car object);
 
-    void delete(Long id);
+    void delete(Long id) throws EntityNotFoundException;
 
     List<Car> searchCarsInRegion(String region);
 

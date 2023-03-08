@@ -4,12 +4,18 @@ import com.noirix.domain.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class UserSecondRepositoryImpl implements UserRepository {
 
     @Override
-    public User findOne(Long id) {
+    public Optional<User> findOne(User user) {
+        return null;
+    }
+
+    @Override
+    public User findById(Long id) {
         return null;
     }
 
@@ -29,8 +35,9 @@ public class UserSecondRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public void delete(Long id) {
+    public User delete(Long id) {
 
+        return null;
     }
 
     @Override
