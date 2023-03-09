@@ -1,9 +1,6 @@
 package com.noirix.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -13,6 +10,7 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @Data
 @Builder
+@ToString
 public class User {
 
     private Long id;
@@ -27,8 +25,8 @@ public class User {
 
     private Double weight;
 
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
-    }
+//    @Override
+//    public String toString() {
+////        return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
+//    }
 }

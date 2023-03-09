@@ -1,5 +1,6 @@
 package com.noirix;
 
+import com.noirix.aspect.MethodCallCounter;
 import com.noirix.repository.UserRepository;
 import com.noirix.service.UserService;
 import com.noirix.util.RandomValuesGenerator;
@@ -20,8 +21,17 @@ public class SpringTest {
         UserService userService = applicationContext.getBean("userServiceImpl", UserService.class);
         RandomValuesGenerator randomValuesGenerator = applicationContext.getBean("getRandomGenerator", RandomValuesGenerator.class);
 
-        logger.info(userRepository.findOne(1L));
-        logger.info(userService.findAll());
-        logger.info(randomValuesGenerator.generateRandomString());
+        userService.findAll();
+        userService.findAll();
+        userService.findAll();
+        userService.findAll();
+
+        userRepository.searchUser();
+        userRepository.searchUser();
+
+        MethodCallCounter.getCallMethodCount();
+//        logger.info(userRepository.findOne(1L));
+//        logger.info(userService.findAll());
+//        logger.info(randomValuesGenerator.generateRandomString());
     }
 }
