@@ -42,7 +42,7 @@ public class UserRepositoryImpl implements UserRepository {
          * 1) Driver Manager - getting connection from DB
          * */
 
-        logger.info("Start of findAll method");
+//        logger.info("Start of findAll method");
 
         final String findAllQuery = "select * from users order by id desc";
 
@@ -58,11 +58,11 @@ public class UserRepositoryImpl implements UserRepository {
                 result.add(parseResultSet(rs));
             }
 
-            logger.info("End of findAll method");
+//            logger.info("End of findAll method");
 
             return result;
         } catch (SQLException e) {
-            logger.error(e.getMessage(), e);
+//            logger.error(e.getMessage(), e);
             throw new RuntimeException("SQL Issues!");
         }
     }
